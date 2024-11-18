@@ -1,0 +1,16 @@
+---
+- hosts: dev
+  tasks: 
+    - copy:
+        content: "Development"
+        dest: /modify.txt
+- host: test
+  tasks:
+  - copy:
+      content: "Testing"
+      dest: /modify.txt
+- host: prod
+  tasks:
+  - copy:
+      content: "Production"
+      dest: /modify.txt
