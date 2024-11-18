@@ -1,0 +1,22 @@
+- name: Install PHP and MariaDB
+  hosts: all
+  tasks:
+    - name: Install PHP and MariaDB
+      yum:
+        name:
+          - php
+          - mariadb
+        state: present
+
+- name: Install Development Tools and Update All Packages
+  hosts: test
+  tasks:
+    - name: Install Development Tools
+      yum:
+        name: "@Development Tools"
+        state: present
+
+    - name: Update all packages
+      yum:
+        name: "*"
+        state: latest
