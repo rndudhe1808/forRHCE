@@ -1,0 +1,23 @@
+--- 
+- name:
+  hosts:
+  tasks:
+    - name: task1
+      yum:
+        name: httpd install
+        state: present
+    - name: Start service httpd, if not started
+      service:
+        name: httpd
+        state: started
+    - name: permanently enable https service, also enable it immediately if possible
+      firewalld:
+        service: https
+        state: enabled
+        permanent: true
+        immediate: true
+        offline: true
+    - name:  update the values
+      template:
+        src: /inde.html.j2
+        dest: /var/www/html/index.html
