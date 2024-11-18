@@ -1,0 +1,23 @@
+---
+- name:
+  hosts: all
+  tasks:
+    - name:  install repo
+      yum_repository:
+        name: repo1
+        baseurl:
+        gpgcheck: 1
+        enabled: 1
+        gpgkey:
+        description:
+        state: present
+    - name:
+      yum_repository:
+        name: repo2
+        baseurl:
+        gpgcheck: 1
+        enabled: 1
+        gpgkey:
+        description:
+        state: present
+        
