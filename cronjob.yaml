@@ -1,0 +1,11 @@
+---
+- name:
+  host: all
+  tasks:
+    - name: create cron
+      cron:
+        name: "test"
+        user: natasha
+        minute: "*/2"
+        job: "logger test"
+        state: present
