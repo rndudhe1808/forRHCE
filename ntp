@@ -1,0 +1,10 @@
+---
+- name:
+  hosts: all
+  vars:
+    timesync_ntp_servers:
+    - hostname: 192.168.10.10
+      iburst: yes
+    roles:
+    - rhel-system-roles.timesync
+    
